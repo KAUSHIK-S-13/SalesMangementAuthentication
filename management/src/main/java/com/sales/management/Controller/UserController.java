@@ -22,7 +22,6 @@ public class UserController {
 
 
     @PostMapping("/add")
-    @Authorization(value="Bearer")
     public baseresp<User> adduserdetail(@Valid @RequestBody UserDTO userDTO) {
         baseresp<User> base=null;
         base=baseresp.<User>builder().Data(userServiceimpl.addUserdetail(userDTO)).build();
